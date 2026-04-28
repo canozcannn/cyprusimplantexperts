@@ -1,0 +1,45 @@
+---
+import { SITE } from "../lib/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-charcoal text-slate-400">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <div class="text-base font-bold text-white">{SITE.brand}</div>
+        <p class="mt-3 text-sm">
+          Premium dental implants and Hollywood Smile in Cyprus, designed for
+          international patients. Transparent pricing. Fast WhatsApp support.
+        </p>
+      </div>
+      <div>
+        <div class="text-sm font-semibold text-white">Treatments</div>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white" href="#implants">Dental Implants</a></li>
+          <li><a class="hover:text-white" href="#hollywood">Hollywood Smile</a></li>
+          <li><a class="hover:text-white" href="#workflow">Digital Workflow</a></li>
+          <li><a class="hover:text-white" href="#results">Results</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-sm font-semibold text-white">Talk to us</div>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li>
+            <a class="hover:text-white" href={SITE.whatsappLink} target="_blank" rel="noopener">
+              WhatsApp Consultation
+            </a>
+          </li>
+          <li>
+            <a class="hover:text-white" href="#quote">Free Treatment Plan</a>
+          </li>
+          <li>English & Greek support</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/5 pt-6 text-xs sm:flex-row">
+      <div>© {year} {SITE.brand}. All rights reserved.</div>
+      <div>Pricing shown is "starting from" and depends on your individual case.</div>
+    </div>
+  </div>
+</footer>

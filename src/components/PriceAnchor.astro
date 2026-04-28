@@ -1,0 +1,269 @@
+---
+import { SITE } from "../lib/site";
+
+const regularItems = [
+  {
+    label: "Single Implant",
+    price: SITE.prices.implants,
+    limassolPrice: SITE.limassolPrices.implants,
+    saving: "€1,150+",
+    desc: "Premium German / Swiss / Italian implant + abutment.",
+    tag: "Most popular",
+  },
+  {
+    label: "Zirconia Crown",
+    price: SITE.prices.crowns,
+    limassolPrice: SITE.limassolPrices.crowns,
+    saving: "€310+",
+    desc: "Full-anatomic zirconia crown. Aesthetic & durable.",
+    tag: null,
+  },
+  {
+    label: "All-on-4 / All-on-6",
+    price: SITE.prices.allOn,
+    limassolPrice: SITE.limassolPrices.allOn,
+    saving: "€8,250+",
+    desc: "Full-arch fixed teeth on 4 or 6 premium implants.",
+    tag: "Best value",
+  },
+];
+---
+
+<section id="implants" class="bg-soft py-16 sm:py-24 overflow-hidden">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center" data-animate="fade-up">
+      <div class="text-xs font-semibold uppercase tracking-widest text-medical">Transparent pricing</div>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">Transparent Pricing for International Patients</h2>
+      <p class="mt-4 text-base text-slate-600">
+        Final pricing depends on your case, bone condition and treatment plan. Get a clear written quote — before you book a
+        flight.
+      </p>
+    </div>
+
+    <!-- Total savings callout -->
+    <div
+      data-animate="fade-up"
+      data-animate-delay="100"
+      class="mx-auto mt-10 max-w-3xl rounded-2xl border-2 border-gold/60 bg-gradient-to-r from-navy to-charcoal px-6 py-5 shadow-[0_8px_30px_rgba(15,23,42,0.25)]"
+    >
+      <div class="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
+        <div>
+          <div class="text-xs font-semibold uppercase tracking-widest text-gold">Compared to Limassol clinics</div>
+          <div class="mt-1 text-xl font-extrabold text-white sm:text-2xl">
+            Save up to <span class="text-gold">€8,250+</span> on your treatment
+          </div>
+          <div class="mt-1 text-sm text-slate-400">Same premium materials · Full digital workflow · Cyprus-based</div>
+        </div>
+        <a
+          href={SITE.whatsappLink}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex shrink-0 items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-bold text-navy shadow-md transition hover:bg-gold/90"
+        >
+          Get My Estimate Quote
+        </a>
+      </div>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="mt-10 grid gap-5 lg:grid-cols-4 pt-2" data-animate-stagger>
+      <!-- Regular cards -->
+      {
+        regularItems.map((it) => (
+          <div
+            data-animate="fade-up"
+            class="relative flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-[var(--shadow-soft)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
+          >
+            {it.tag && (
+              <span class="absolute -top-3 left-6 rounded-full bg-navy px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-gold">
+                {it.tag}
+              </span>
+            )}
+
+            <div class="text-sm font-semibold text-slate-500">{it.label}</div>
+
+            {it.limassolPrice && (
+              <div class="mt-2 flex items-center">
+                <div class="flex items-center gap-1.5 rounded-md bg-red-50 px-2 py-0.5">
+                  <svg
+                    class="h-3 w-3 text-red-400 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path d="M17 12H7" stroke-linecap="round" />
+                  </svg>
+                  <span class="text-sm font-semibold text-red-400 line-through">Limassol {it.limassolPrice}</span>
+                </div>
+              </div>
+            )}
+
+            <div class="mt-2 flex items-baseline gap-1.5">
+              <span class="text-[11px] uppercase tracking-wider text-slate-400">from</span>
+              <span class="text-3xl font-extrabold text-navy">{it.price}</span>
+            </div>
+
+            {it.saving && (
+              <div class="mt-2 inline-flex items-center gap-1.5 self-start rounded-full bg-whatsapp/10 px-2.5 py-1">
+                <svg class="h-3 w-3 text-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="text-[11px] font-bold text-whatsapp">You save {it.saving}</span>
+              </div>
+            )}
+
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 grow">{it.desc}</p>
+
+            <a
+              href={SITE.whatsappLink}
+              target="_blank"
+              rel="noopener"
+              class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 px-4 py-2.5 text-sm font-semibold text-navy transition hover:border-navy hover:bg-navy hover:text-white"
+            >
+              Get my quote
+            </a>
+          </div>
+        ))
+      }
+
+      <!-- ✦ Hollywood Smile — Featured card -->
+      <div
+        id="hollywood"
+        data-animate="scale-in"
+        class="hollywood-card relative flex flex-col rounded-3xl p-6 shadow-[0_20px_60px_rgba(15,23,42,0.45)]"
+        style="background: linear-gradient(145deg, #0d1526 0%, #1a1f35 50%, #0f172a 100%);"
+      >
+        <!-- Shimmer + glow confined to an overflow-hidden inner mask -->
+        <div class="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl" aria-hidden="true">
+          <div class="hollywood-shimmer absolute inset-0 rounded-3xl"></div>
+          <div
+            class="absolute -top-10 -right-10 h-44 w-44 rounded-full opacity-30"
+            style="background: radial-gradient(circle, #e5d3a1, transparent 70%); filter: blur(28px);"
+          >
+          </div>
+        </div>
+
+        <!-- Tag -->
+        <span
+          class="absolute -top-3.5 left-6 z-10 rounded-full bg-gold px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-navy shadow-[0_2px_12px_rgba(229,211,161,0.5)]"
+        >
+          ✦ Signature Package
+        </span>
+
+        <!-- Smile icon -->
+        <div class="mb-1 flex items-center gap-2">
+          <svg class="h-5 w-5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke-linecap="round"></path>
+            <path d="M9 9h.01M15 9h.01" stroke-linecap="round" stroke-width="2"></path>
+          </svg>
+          <div class="text-sm font-semibold text-gold/80">Hollywood Smile</div>
+        </div>
+
+        <!-- Limassol strikethrough -->
+        <div class="mt-2 flex items-center">
+          <div class="flex items-center gap-1.5 rounded-md bg-red-900/30 px-2 py-0.5">
+            <svg class="h-3 w-3 text-red-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M17 12H7" stroke-linecap="round"></path>
+            </svg>
+            <span class="text-sm font-semibold text-red-400 line-through">
+              Limassol {SITE.limassolPrices.hollywood}
+            </span>
+          </div>
+        </div>
+
+        <!-- Price -->
+        <div class="mt-2 flex items-baseline gap-1.5">
+          <span class="text-[11px] uppercase tracking-wider text-gold/60">from</span>
+          <span class="text-3xl font-extrabold text-white">{SITE.prices.hollywood}</span>
+        </div>
+
+        <!-- Savings badge — prominent -->
+        <div class="mt-3 inline-flex items-center gap-2 self-start rounded-full border border-gold/40 bg-gold/15 px-3 py-1.5">
+          <svg class="h-3.5 w-3.5 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span class="text-xs font-bold text-gold">You save €4,500+</span>
+        </div>
+
+        <p class="mt-3 text-sm leading-relaxed text-slate-300 grow">
+          Full digital smile design · AI preview · Premium zirconia veneers.
+        </p>
+
+        <a
+          href={SITE.whatsappLink}
+          target="_blank"
+          rel="noopener"
+          class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-4 py-3 text-sm font-bold text-navy shadow-[0_4px_20px_rgba(229,211,161,0.35)] transition hover:bg-gold/90 hover:shadow-[0_6px_28px_rgba(229,211,161,0.5)]"
+        >
+          Design my smile
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <p class="mt-6 text-center text-xs text-slate-400" data-animate="fade-up">
+      Limassol prices shown are market estimates for reference. Prices depend on individual case assessment.
+    </p>
+
+    <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center" data-animate="fade-up">
+      <a
+        href={SITE.whatsappLink}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-whatsapp-600"
+      >
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor">
+          <path
+            d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.554-5.338 11.89-11.893 11.89a11.9 11.9 0 01-5.688-1.448L.057 24z"
+          ></path>
+        </svg>
+        Send X-ray for instant quote
+      </a>
+      <span class="text-xs text-slate-500">No consultation fee · Reply within minutes</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Shimmer sweep animation */
+  .hollywood-shimmer {
+    background: linear-gradient(105deg, transparent 40%, rgba(229, 211, 161, 0.12) 50%, transparent 60%);
+    background-size: 200% 100%;
+    animation: shimmer 3.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Pulse glow on the card border */
+  .hollywood-card {
+    border: 1px solid rgba(229, 211, 161, 0.25);
+    animation: borderPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes borderPulse {
+    0%,
+    100% {
+      border-color: rgba(229, 211, 161, 0.2);
+      box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.45),
+        0 0 0 0 rgba(229, 211, 161, 0);
+    }
+    50% {
+      border-color: rgba(229, 211, 161, 0.55);
+      box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.45),
+        0 0 28px 4px rgba(229, 211, 161, 0.12);
+    }
+  }
+</style>

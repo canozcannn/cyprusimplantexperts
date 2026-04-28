@@ -1,0 +1,71 @@
+---
+import { SITE } from "../lib/site";
+
+const reviews = [
+  {
+    name: "James W.",
+    country: "United Kingdom 🇬🇧",
+    text: "Got my full quote on WhatsApp the same day. The pricing matched exactly when I arrived. Thrilled with the result.",
+  },
+  {
+    name: "Maria K.",
+    country: "Cyprus 🇨🇾",
+    text: "Premium materials, very professional, and clear communication throughout. Highly recommend.",
+  },
+  {
+    name: "Sarah & Tom",
+    country: "Expats in Cyprus 🌍",
+    text: "From the first message to follow-up months later, the whole experience was smooth. Worth every euro.",
+  },
+];
+---
+
+<section class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end" data-animate="fade-up">
+      <div>
+        <div class="text-xs font-semibold uppercase tracking-widest text-medical">Patient reviews</div>
+        <h2 class="accent-line mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
+          Trusted by international patients
+        </h2>
+      </div>
+
+      <div class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-soft px-5 py-3">
+        <div class="flex text-gold">
+          {
+            [0, 1, 2, 3, 4].map(() => (
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.2 1 5.9L10 14.9l-5.2 2.9 1-5.9L1.5 7.7l5.9-.9z" />
+              </svg>
+            ))
+          }
+        </div>
+        <div class="text-sm">
+          <div class="font-bold text-navy">{SITE.rating} on Google</div>
+          <div class="text-slate-500">{SITE.reviews} verified reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-3" data-animate-stagger>
+      {
+        reviews.map((r) => (
+          <figure class="flex h-full flex-col rounded-3xl border border-slate-200 bg-soft p-7 transition hover:bg-white hover:shadow-[var(--shadow-soft)]">
+            <div class="flex text-gold">
+              {[0, 1, 2, 3, 4].map(() => (
+                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.2 1 5.9L10 14.9l-5.2 2.9 1-5.9L1.5 7.7l5.9-.9z" />
+                </svg>
+              ))}
+            </div>
+            <blockquote class="mt-4 grow text-sm leading-relaxed text-slate-700">“{r.text}”</blockquote>
+            <figcaption class="mt-5">
+              <div class="text-sm font-bold text-navy">{r.name}</div>
+              <div class="text-xs text-slate-500">{r.country}</div>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

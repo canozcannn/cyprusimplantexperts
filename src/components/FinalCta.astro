@@ -1,0 +1,50 @@
+---
+import { SITE } from "../lib/site";
+---
+
+<section id="quote" class="dark-gradient relative overflow-hidden py-20 sm:py-28">
+  <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8" data-animate="fade-up">
+    <div
+      class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold tracking-wide text-gold"
+    >
+      <span class="h-1.5 w-1.5 rounded-full bg-whatsapp"></span>
+      No consultation fee · Reply in minutes
+    </div>
+    <h2 class="mt-5 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Get Your Personalized Treatment Plan</h2>
+    <p class="mx-auto mt-5 max-w-2xl text-base text-slate-300 sm:text-lg">
+      Send your X-ray or photos and receive a clear, written treatment plan with transparent pricing — before you book a flight.
+    </p>
+
+    <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a
+        href={SITE.whatsappLink}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-4 text-base font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-whatsapp-600 sm:w-auto"
+      >
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor">
+          <path
+            d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.554-5.338 11.89-11.893 11.89a11.9 11.9 0 01-5.688-1.448L.057 24z"
+          ></path>
+        </svg>
+        WhatsApp Us Now
+      </a>
+      <a
+        href={SITE.whatsappLink}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10 sm:w-auto"
+      >
+        Get a Free Quote
+      </a>
+    </div>
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-slate-400">
+      <span>Implants from {SITE.prices.implants}</span>
+      <span class="hidden sm:inline">·</span>
+      <span>Crowns from {SITE.prices.crowns}</span>
+      <span class="hidden sm:inline">·</span>
+      <span>Hollywood Smile from {SITE.prices.hollywood}</span>
+    </div>
+  </div>
+</section>

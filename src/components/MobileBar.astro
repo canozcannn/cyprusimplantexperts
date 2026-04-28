@@ -1,0 +1,31 @@
+---
+import { SITE } from "../lib/site";
+---
+
+<div
+  class="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 px-3 py-2 shadow-[0_-8px_24px_-12px_rgba(15,23,42,0.15)] backdrop-blur md:hidden"
+  style="padding-bottom: max(0.5rem, env(safe-area-inset-bottom));"
+>
+  <div class="grid grid-cols-2 gap-2">
+    <a
+      href={SITE.whatsappLink}
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-4 py-3 text-sm font-semibold text-white"
+    >
+      <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor">
+        <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.554-5.338 11.89-11.893 11.89a11.9 11.9 0 01-5.688-1.448L.057 24z" />
+      </svg>
+      WhatsApp
+    </a>
+    <a
+      href="#quote"
+      class="inline-flex items-center justify-center gap-2 rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white"
+    >
+      Free Quote
+    </a>
+  </div>
+</div>
+
+<!-- Spacer so content doesn't sit under the bar on mobile -->
+<div class="h-20 md:hidden" aria-hidden="true"></div>

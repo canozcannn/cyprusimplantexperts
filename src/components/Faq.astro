@@ -1,0 +1,58 @@
+---
+const faqs = [
+  {
+    q: "How much do dental implants cost in Cyprus?",
+    a: "Implants start from €450, crowns from €190 and a full Hollywood Smile from €3,500. Final pricing depends on your case — send your X-ray for a fixed, transparent quote with no consultation fee.",
+  },
+  {
+    q: "Is the online consultation really free?",
+    a: "Yes. There is no fee for the online consultation. Send your X-ray or photos on WhatsApp and you’ll receive a personalized plan within minutes during working hours.",
+  },
+  {
+    q: "Which implant brands do you use?",
+    a: "We use premium German, Swiss and Italian implant systems — chosen for long-term reliability, scientific evidence and global availability of replacement parts.",
+  },
+  {
+    q: "How fast can the treatment be completed?",
+    a: "Many cases are completed in 5–7 working days using our digital workflow. Complex full-arch cases may require a second visit a few months later.",
+  },
+  {
+    q: "Do you help with hotels and transfers?",
+    a: "Yes. We coordinate hotel options at multiple price points and arrange airport transfers so your trip is fully organized.",
+  },
+  {
+    q: "What languages do you speak?",
+    a: "Full English support is available throughout the entire patient journey, plus Greek for local patients.",
+  },
+];
+---
+
+<section id="faq" class="bg-soft py-16 sm:py-24">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center" data-animate="fade-up">
+      <div class="text-xs font-semibold uppercase tracking-widest text-medical">Questions answered</div>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">Frequently asked questions</h2>
+    </div>
+
+    <div class="mt-10 space-y-3" data-animate-stagger>
+      {
+        faqs.map((f, i) => (
+          <details
+            class="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-gold open:border-gold open:shadow-[var(--shadow-soft)]"
+            open={i === 0}
+          >
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <span class="text-base font-semibold text-navy">{f.q}</span>
+              <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-soft text-navy transition group-open:rotate-45 group-open:bg-navy group-open:text-gold">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14" stroke-linecap="round" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-4 text-sm leading-relaxed text-slate-600">{f.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

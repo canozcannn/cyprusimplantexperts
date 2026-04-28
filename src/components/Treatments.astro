@@ -1,0 +1,81 @@
+---
+const treatments = [
+  {
+    title: "Full Mouth Rehabilitation",
+    desc: "Complete oral reconstruction with implant-supported solutions tailored to your jaw and bite.",
+    // Dental arch with 3 tooth bumps + gum line
+    icon: `<path d="M4 18C4 10.5 7.5 5.5 12 5.5S20 10.5 20 18"/><path d="M6.5 18V13.5Q8 11 9.5 13.5V18"/><path d="M9.5 18V11.5Q12 9 14.5 11.5V18"/><path d="M14.5 18V13.5Q16 11 17.5 13.5V18"/><line x1="4" y1="18" x2="20" y2="18"/>`,
+  },
+  {
+    title: "Implant-Supported Prosthetics",
+    desc: "Fixed bridges and full-arch restorations on premium implant systems.",
+    // Crown shape + abutment post + implant screw with threads
+    icon: `<path d="M9 3.5L7 8.5L8.5 14C8.5 15.1 9.4 16 10.5 16H13.5C14.6 16 15.5 15.1 15.5 14L17 8.5L15 3.5H9Z"/><line x1="12" y1="16" x2="12" y2="18.5"/><path d="M10.5 18.5H13.5L13 22H11Z"/><line x1="10.5" y1="20.5" x2="13.5" y2="20.5"/>`,
+  },
+  {
+    title: "Hollywood Smile (Zirconia)",
+    desc: "Aesthetic, full-anatomic zirconia veneers and crowns for a perfect, natural smile.",
+    // Tooth silhouette + internal gloss lines + side sparkle diamonds
+    icon: `<path d="M9 3C8 3 7 4 7 6L8 17C8 19 9 21 10 21H14C15 21 16 19 16 17L17 6C17 4 16 3 15 3H9Z"/><path d="M10.5 8.5L11 11" stroke-width="1.2"/><path d="M13 8V10.5" stroke-width="1.2"/><path d="M19.5 5L21 3.5 19.5 2 18 3.5Z"/><path d="M3.5 8L5 6.5 3.5 5 2 6.5Z"/>`,
+  },
+  {
+    title: "Digital Smile Design",
+    desc: "Preview and approve your new smile digitally before any treatment begins.",
+    // Monitor frame + smile preview + horizontal scan/design line
+    icon: `<rect x="2" y="3" width="20" height="13" rx="2"/><path d="M8 21H16M12 16V21"/><path d="M8 10.5C9 12.5 10.5 13.5 12 13.5C13.5 13.5 15 12.5 16 10.5"/><path d="M7.5 7.5H16.5" stroke-dasharray="2 1.5"/>`,
+  },
+];
+---
+
+<section id="hollywood" class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end" data-animate="fade-up">
+      <div class="max-w-2xl">
+        <div class="text-xs font-semibold uppercase tracking-widest text-medical">Treatments</div>
+        <h2 class="accent-line mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
+          Premium Implant & Smile Design Solutions
+        </h2>
+      </div>
+      <p class="max-w-md text-sm text-slate-600">
+        Every treatment plan is custom-built using a 100% digital workflow with premium materials and international-grade implant
+        systems.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-animate-stagger>
+      {
+        treatments.map((t) => (
+          <div class="group relative flex flex-col rounded-3xl border border-slate-200 bg-soft p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-[var(--shadow-card)]">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl bg-navy text-gold">
+              <svg
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <Fragment set:html={t.icon} />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-lg font-bold text-navy">{t.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{t.desc}</p>
+            <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-medical">
+              Learn more
+              <svg
+                class="h-4 w-4 transition group-hover:translate-x-1"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
