@@ -7,7 +7,8 @@ const regularItems = [
     price: SITE.prices.implants,
     limassolPrice: SITE.limassolPrices.implants,
     saving: "€1,150+",
-    desc: "Premium German / Swiss / Italian implant + abutment.",
+    desc: "Final price depends on bone condition and abutment type.",
+    includes: ["Premium German / Swiss / Italian implant", "Standard abutment", "Surgical placement & guided planning"],
     tag: "Most popular",
   },
   {
@@ -15,7 +16,8 @@ const regularItems = [
     price: SITE.prices.crowns,
     limassolPrice: SITE.limassolPrices.crowns,
     saving: "€310+",
-    desc: "Full-anatomic zirconia crown. Aesthetic & durable.",
+    desc: "Final price depends on tooth position and shade complexity.",
+    includes: ["Full-anatomic zirconia crown", "Digital scan & CAD/CAM milling", "Final cementation"],
     tag: null,
   },
   {
@@ -23,7 +25,8 @@ const regularItems = [
     price: SITE.prices.allOn,
     limassolPrice: SITE.limassolPrices.allOn,
     saving: "€8,250+",
-    desc: "Full-arch fixed teeth on 4 or 6 premium implants.",
+    desc: "Final price depends on bone anatomy, framework choice and arch.",
+    includes: ["4 or 6 premium implants per arch", "Titanium bar or zirconia bridge", "Same-day temporary in eligible cases"],
     tag: "Best value",
   },
 ];
@@ -35,8 +38,7 @@ const regularItems = [
       <div class="text-xs font-semibold uppercase tracking-widest text-medical">Transparent pricing</div>
       <h2 class="mt-3 text-3xl font-bold tracking-tight text-navy sm:text-4xl">Transparent Pricing for International Patients</h2>
       <p class="mt-4 text-base text-slate-600">
-        Final pricing depends on your case, bone condition and treatment plan. Get a clear written quote — before you book a
-        flight.
+        All prices below are starting points. Your final, fixed quote is based on your X-ray, bone condition and treatment complexity — sent to you in writing on WhatsApp before you book a flight.
       </p>
     </div>
 
@@ -113,7 +115,18 @@ const regularItems = [
               </div>
             )}
 
-            <p class="mt-3 text-sm leading-relaxed text-slate-600 grow">{it.desc}</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{it.desc}</p>
+
+            {it.includes && (
+              <ul class="mt-3 space-y-1.5 grow">
+                {it.includes.map((inc) => (
+                  <li class="flex items-start gap-2 text-xs text-slate-600">
+                    <svg class="mt-0.5 h-3.5 w-3.5 shrink-0 text-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+                    <span>{inc}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
 
             <a
               href={SITE.whatsappLink}
